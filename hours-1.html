@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+           <p v-if="hours < 12">早上好！</p>
+           <p v-if="hours>=12 && hours < 18">中午好！</p>
+           <p v-if="hours>=18">晚上好！</p>
+        </div>
+    </body>
+       <script type="text/javascript">
+       var hours = new Date().getHours();
+        var app = new Vue({
+            el: '#app',
+            data:{
+                hours
+            }
+        })
+    </script>
+</html>
