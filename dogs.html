@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+           <p>现在养的狗的名字是{{dogs[dogs.length-1]}}</p>
+           <p>养狗历史：</p>
+           <ol>
+               <li v-for="dog in dogs">
+                   {{dog}}
+               </li>
+            </ol>
+        </div>
+    </body>
+       <script type="text/javascript">
+       var hours = new Date().getHours();
+        var app = new Vue({
+            el: '#app',
+            data:{
+                dogs:['甜甜','花卷']
+            }
+        })
+    </script>
+</html>
