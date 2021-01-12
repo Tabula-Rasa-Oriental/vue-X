@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <p v-if=true> v-if 为True时</p>
+          <p v-if=false> v-if 为False时</p>  <!-- 该指令直接告诉浏览器不渲染，也就是没有这个节点-->
+          <p v-show=true> v-show为True时</p>
+          <p v-show=false> v-show 为False时</p>  <!-- 
+              该指令直接告诉浏览器该节点是通过css样式决定的，会被渲染为<p style="display: none;"> v-show 为False时</p>-->
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                
+            }
+        })
+    </script>
+</html>

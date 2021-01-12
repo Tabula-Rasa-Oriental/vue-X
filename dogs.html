@@ -10,7 +10,7 @@
            <p>养狗历史：</p>
            <ol>
                <li v-for="dog in dogs">
-                   {{dog}}
+                   <span v-show="show">{{dog}}</span> 
                </li>
             </ol>
         </div>
@@ -20,7 +20,8 @@
         var app = new Vue({
             el: '#app',
             data:{
-                dogs:['甜甜','花卷']
+                dogs:['甜甜','花卷'],
+                show:true
             }
         })
     </script>
