@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p >自从你打开页面，目前已经过了{{seconds}}秒钟了</button>
+            <buttion type="button" :disabled="buttonDisable">Button</buttion>
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                seconds:0,
+                buttonDisable:false
+            },
+            created(){
+                setInterval(()=>
+                {
+                    this.seconds+=2;
+                    this.buttonDisable=!this.buttonDisable
+                },2000)
+            }
+        });
+    </script>
+</html>

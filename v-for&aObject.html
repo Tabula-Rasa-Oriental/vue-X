@@ -6,16 +6,9 @@
     </head>
     <body>
         <div id="app">
-           <p>现在养的狗的名字是{{dogs[dogs.length-1]}}</p>
-           <p>养狗历史：</p>
-           <ol>
-               <li v-for="dog in dogs">
-                   <span v-show="show">{{dog}}</span> <!--该指令的含义是将所在的元素循环输出到页面上 -->
-                               </li>
-            </ol>
             <ol>
-                <li v-for="n in 100">
-                    <p>这是第{{n}}位</p>    
+                <li v-for="(rent,city) in averageRent"> <!-- （value,key）-->
+                    <p>{{city}}的租金是{{rent}}</p>    
                 </li>
             </ol>
         </div>
@@ -25,8 +18,11 @@
         var app = new Vue({
             el: '#app',
             data:{
-                dogs:['甜甜','花卷'],
-                show:true
+                averageRent:{
+                    guiyang:2300,
+                    shanghai:4500,
+                    beijing:5000
+                }
             }
         })
     </script>
