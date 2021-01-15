@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <button @click="visible =! visible">点击切换下部可见性</button>
+          <transition name="fadeAway">
+          <p v-if="visible" >本段内容根据上面的Button切换</p>
+        </transition>
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{ 
+                visible:true
+            }
+        })
+    </script>
+    <style type="text/css">
+    .fadeAway-enter-active,.fadeAway-leave-active{
+        transition: opacity 1.5s;
+    }
+    .fadeAway-enter,.fadeAway-leave-to{
+        opacity: 0;
+    }
+    </style>
+</html>

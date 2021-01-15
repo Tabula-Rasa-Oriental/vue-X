@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <p v-blink>本段内容闪烁</p>
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{ 
+            }
+        });
+        Vue.directive('blink',{
+            bind(el){
+                let isVisible = true;
+                setInterval(()=>{
+                    isVisible = !isVisible;
+                    el.style.visibility = isVisible ? 'visible' :'hidden';
+                },2000);
+            }
+        })
+    </script>
+</html>

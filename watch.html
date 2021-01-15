@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <p> <input type="text" v-model="firstName"> </p>
+          <p> <input type="text" v-model="lastName"></p>
+          <p> <input type="text" v-model="fullName"> </p>
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                firstName:'Juan',
+                lastName:'Hua',
+                fullName:''
+            },
+            watch:{
+                firstName: function(newValue,oldValue){
+                    return this.fullName = newValue + ' ' +this.lastName;
+                },
+                lastName :function(newValue,oldValue){
+                    return this.fullName = this.firstName + ' ' + newValue;
+                }
+            },
+            created() {
+                     this.fullName = this.firstName + this.lastName
+                }
+        });
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <p v-for="number in filterNegative(numbers)">
+                {{number}}
+            </p>
+        </div>
+    </body>
+       <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data:{
+                numbers:[0,-1,-2,3,4,5]
+            },
+            methods:{
+                filterNegative(numbers){
+                    return numbers.filter((number) => number <0);
+                }
+            }
+        });
+    </script>
+</html>
